@@ -1,12 +1,6 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Quantico } from "next/font/google";
+import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-
-const quantico = Quantico({
-  weight: ["400", "700"],
-  variable: "--font-quantico",
-  subsets: ["latin"],
-});
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -46,7 +40,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${quantico.variable} font-sans antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased`}
       >
         <ThemeProvider
           attribute="class"
@@ -60,7 +54,7 @@ export default function RootLayout({
             <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-epic-accent rounded-full blur-[180px] opacity-[0.04]" />
           </div>
 
-          <div className="relative z-0 flex flex-col min-h-screen">
+          <div className="relative z-0 flex flex-col min-h-screen overflow-x-hidden">
             {children}
           </div>
         </ThemeProvider>
